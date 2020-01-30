@@ -23,7 +23,7 @@ Which method do you think makes more sense intuitively?  Do you see any possible
 
 **Michael**: One-hot encoding seems more inuitive to me since you would be storing the data in columns that are the same from observation to observation. The other method makes it possible to have columns contain different words.   
 
-**Peter**:
+**Peter**: One-hot encounding seems to me like creating indicator variables like we do in a linear model with categorial predictors, so that's where my mind first went.  Jimmy brings up a good point about lack of information, however.  Of course, you would need to know that the model would leverage the information for that to be valid.
 
 **Rebekah**:
 
@@ -90,7 +90,7 @@ Can you think of any consequences or examples of side effects of choosing a sub-
 
 **Michael**: A loss function tells your model how closely it fits your data. Imagine you're in the woods and you are lost, but you have a special gps that must be tuned to give accurate results. If we don't tune this gps properly then we end up going the wrong way and end up farther from our desired destination. So, imagine that tuning the gps is like selecting the right loss function; if we choose the wrong one we may end up with less than optimal results.
 
-**Peter**:
+**Peter**:  Choosing a loss function that fits the scientific problem is important.  Thinking generally -- not just for deep learning -- in classification problems, different loss functions (hinge loss, log loss, l2 loss) penalize differently, leading to different results.  Ideally you want your loss function to penalize according to your scientific goal.
 
 **Rebekah**:
 
@@ -125,10 +125,10 @@ Scaling the data using training set statistics is useful because it allows every
 
 **Michael**: Scaling is important because it allows all variables to be on the same scale, otherwise if you try to update your gradient with variables on vastly different scales this could slow down the fitting of your model. It's important to use the training mean and standard deviation on your test set because the model was trained on data that relied on these values. I think that you wouldn't want to scale the testing and traing sets together because this could lead to some information leak, which can invalidate your testing error estimate.
 
-**Peter**:
+**Peter**: I think everyone else touched on why scaling is important pretty well, so I won't restate.  Why should we not scale the testing data along with the training data?  If our ultimate goal is to predict the an unknown response in the future, given a set of features, how would we scale our features using the new ones and the ones already in the model?  When evaluating accuracy on a testing set, we are simulating this process, hence we want to keep it as similar as possible.
 
 **Rebekah**:
 
 **Saran**:
 
-**Yan**;
+**Yan**:

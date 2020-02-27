@@ -52,7 +52,7 @@ The purpose of other regularization techniques such as LASSO and ridge, a penalt
 
 **Michael**: They define regularization as made to a learning algorithm that is intended to reduce its testing (generalization) error, but not its training error. From this definition I would agree that dataset augmentation is listed as a regularization technique; since you are translating, rotating, stretching, and shrinking images your network will deal perturbations like these when working with test data.
 
-**Peter**:
+**Peter**: (This is only based on CH 5 from deep learning with python).  I'm kind of torn on this, it makes snese that changing up your image slightly helps generalize your model, but then you really are just double dipping into your data.  I could image in image classification cases where the response is very clear -- a rotated cat is still clearly a cat -- it makes sense but would be worried about just adding noise to existing data to increase the amount of data.  Seems like it would make overfitting worse in some cases.
 
 **Saran**:
 
@@ -93,7 +93,7 @@ Lose control over your full model/ all hyperparameters.
 
 **Michael**: The advantage of using a pretrained network is that you don't have to use as much computational power to complete your task. This assumes the network that your pretrained network is similar to what you are working on. In the book they used a pretrained network from ImageNet to be used for binary classification of cats and dogs. They were able to use this network since ImageNet had many cat and dog classes. One disadvantage is you may not fully understand why the original creator made some model selection choices.
 
-**Peter**:
+**Peter**: The advanatage is you can piggyback off of a previous model. If that previous model is good and relevant, you can simple approve upon it.  The disadvantage, however, is you don't fully understand the previous model and it may be hard to gauge whether or not it is good and relevant.  
 
 **Saran**:
 
@@ -131,7 +131,7 @@ Pooling shrinks the amount of nodes in a layer. So the less pooling you do, the 
 
 **Michael**: I think by using more convolutional layers the network will be able to better extract different layers of representations. By having pooling layers between every two convolutional layers the number of total parameters in the network will be larger; this is more computationally expensive.
 
-**Peter**:
+**Peter**: More pooling will obviously be more expensive and could also lend itself to overfitting.  However, you have more ability to find different patterns.  I suppose it's similar to building a bigger model in general and comparing it to a smaller model, there is usually somewhere inbetween that is the optimal blend of efficiency, interpretability (not here), and prediction performance.
 
 **Saran**:
 
